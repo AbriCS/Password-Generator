@@ -32,7 +32,7 @@ if (lengthChoice <8 || lengthChoice >128) {
 }
 if (isNaN(parseInt(lengthChoice))) {
  alert ("Sorry it needs to be a valid number") 
-
+return ""
 }
 
 //request to select letters, numbers and symbols.
@@ -60,7 +60,7 @@ if (checkSymbol == true ){
 
 
 if(checkNumber == false && checkUcase == false && checkLcase == false && checkSymbol ==false) {
-  alert ("Please select one option")
+  alert ("Please select at least one option")
 }
 
   
