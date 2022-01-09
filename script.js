@@ -14,17 +14,16 @@ const numbers=[0,1,2,3,4,5,6,7,8,9]
 const uppercase=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const lowercase=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const symbol=["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~", " ' ", " ", ' " ', "\\" ];
-const pwGen = "";
-
-let lengthChoice = "";
-let userChoices = "";
+let pwGen = "";
 
 
-// Add event listener to generate button.
-generateBtn.addEventListener("click", generatePassword)
+
 
 // generate password
 function generatePassword () {
+
+  let lengthChoice = "";
+  let userChoices = "";
 
 //request to choose length in digits.
   lengthChoice = prompt ("please choose password length from 8 to 128 characters")
@@ -71,8 +70,8 @@ if(checkNumber == true || checkUcase == true || checkLcase == true || checkSymbo
   
 }
 
-
-//writePassword(lengthChoice, userChoices)
+var passwordText = document.querySelector("#password");
+pwGen=writePassword(lengthChoice, userChoices)
 document.getElementById("password").innerHTML=pwGen;
 
 // Write password to the #password input
@@ -80,9 +79,9 @@ document.getElementById("password").innerHTML=pwGen;
 function writePassword(l, userChoices) {
   
   
-  //var password = generatePassword("");
-  //var passwordText = document.querySelector("#password");
- 
+ // var password = generatePassword("");
+  
+ var pwGen= "";
 
   for (let i = 0; i < l; i++) {
   pwGen += userChoices.charAt(Math.floor(Math.random()*userChoices.length));
@@ -92,7 +91,8 @@ return pwGen;
 
 //placing the closing bracket here brought the passwordText.Value back to bright blue
 }
-  //passwordText.value = password;
-
+// passwordText.value = password;
 }
+// Add event listener to generate button.
+generateBtn.addEventListener("click", generatePassword)
 
